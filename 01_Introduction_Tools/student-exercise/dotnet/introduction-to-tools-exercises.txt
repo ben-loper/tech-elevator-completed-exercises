@@ -3,7 +3,7 @@
     directory to the exercise directory.
 ----
 
-$ cd ~/YOURNAME-c/module-1/01_Introduction_Tools/student-exercise/dotnet/csharp-helloworld
+$ cd /YOURNAME-c/module-1/01_Introduction_Tools/student-exercise/dotnet/csharp-helloworld
 
 Note, do not enter the beginning "$" character. It represents the prompt for
 the command line. This convention is commonly used to visually separate the
@@ -15,7 +15,9 @@ actual command from other text in Unix documentation.
     refer to?
 ----
 
-<type your response here>
+<type your answer here>
+
+The tilde refers to the home directory. In Windows, the home directory is the user's folder located in the C:/users/<username>. 
 
 ----
 3.  A good habit to develop, especially while you're developing your skills on
@@ -24,7 +26,13 @@ actual command from other text in Unix documentation.
 ----
 
 $ pwd
+
 <type or copy-paste the result here>
+
+/c/workspace/exercises/01_Introduction_Tools/student-exercise/dotnet/csharp-helloworld
+
+
+NOTE: Per Chris's instruction, we put the file in directly in to the C drive. This is to avoid strings for file location that too long for Windows to handle. 
 
 The present working directory displayed should match the directory you changed
 to in Exercise 1.  Note, the two may not match at the very beginning if you
@@ -42,6 +50,14 @@ changes directory, and the "pwd" command reflects this.
 $ ls -la
 <type or copy-paste the result here>
 
+total 12
+drwxr-xr-x 1 bloper 197121   0 Jan 14 15:37 ./
+drwxr-xr-x 1 bloper 197121   0 Jan 14 15:37 ../
+drwxr-xr-x 1 bloper 197121   0 Jan 14 15:37 database/
+drwxr-xr-x 1 bloper 197121   0 Jan 14 15:37 Helloworld/
+-rw-r--r-- 1 bloper 197121 998 Jan 14 15:37 Helloworld.sln
+
+
 
 ----
 5.  What do the "." and ".." directories displayed in the directory listing in
@@ -49,6 +65,8 @@ $ ls -la
 ----
 
 <type your answer here>
+
+The . refers to the current directy. The .. refers to the parent directory
 
 ----
 6.  What are the names of the files, including any dot-files, displayed in the
@@ -58,6 +76,8 @@ $ ls -la
 <type or copy-paste your answer here>
 
 
+Helloworld.sln
+
 ----
 7.  What are the names of the directories, including any dot-directories, displayed in
     the directory listing in Exercise 4?
@@ -65,6 +85,10 @@ $ ls -la
 
 <type or copy-paste your answer here>
 
+database
+Helloworld
+.
+..
 
 ----
 8.  Helloworld.sln is a Visual Studio project file. You will learn more about project
@@ -96,6 +120,30 @@ $ less database/pagila.sql
 You are encouraged to make "less" part of your standard command line toolkit.
 
 <type or copy-paste the first five lines of either file here>
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helloworld", "Helloworld\Helloworld.csproj", "{D70F7947-F80A-47D9-9F6C-E34B71E8E50D}"
+EndProject
+Global
+        GlobalSection(SolutionConfigurationPlatforms) = preSolution
+                Debug|Any CPU = Debug|Any CPU
+                Release|Any CPU = Release|Any CPU
+        EndGlobalSection
+        GlobalSection(ProjectConfigurationPlatforms) = postSolution
+                {D70F7947-F80A-47D9-9F6C-E34B71E8E50D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+                {D70F7947-F80A-47D9-9F6C-E34B71E8E50D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+                {D70F7947-F80A-47D9-9F6C-E34B71E8E50D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+                {D70F7947-F80A-47D9-9F6C-E34B71E8E50D}.Release|Any CPU.Build.0 = Release|Any CPU
+        EndGlobalSection
+        GlobalSection(SolutionProperties) = preSolution
+                HideSolutionNode = FALSE
+        EndGlobalSection
+EndGlobal
+Helloworld.sln (END)
+
 
 ----
 9.  This is good time to create a Git snapshot of your progress.  Usually,
