@@ -287,14 +287,58 @@ drwxr-xr-x 1 bloper 197121    0 Jan 14 15:37 Properties/
 $ <enter the Git command to display status>
 <type or copy-paste the result here>
 
+On branch master
+Your branch is based on 'origin/master', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   ../../introduction-to-tools-exercises.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        Program.cs.copy
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+
 $ <enter the Git command to "stage" all changes>
 <type or copy-paste the result here>
+
+On branch master
+Your branch is based on 'origin/master', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   Program.cs.copy
+        modified:   ../../introduction-to-tools-exercises.txt
+
 
 $ <enter the Git command to save all "staged" changes>
 <type or copy-paste the result here>
 
+$ git commit -m "feature complete"
+[master 0766579] feature complete
+ 2 files changed, 64 insertions(+), 1 deletion(-)
+ create mode 100644 01_Introduction_Tools/student-exercise/dotnet/csharp-helloworld/Helloworld/Program.cs.copy
+
+
 $ git push origin master
 <type or copy-paste the result here>
+
+Enumerating objects: 55, done.
+Counting objects: 100% (55/55), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (41/41), done.
+Writing objects: 100% (55/55), 704.42 KiB | 4.76 MiB/s, done.
+Total 55 (delta 8), reused 0 (delta 0)
+To https://bitbucket.org/te-cin-cohort-4/benjaminloper-c-exercises
+ * [new branch]      master -> master
 
 
 ----
@@ -308,6 +352,13 @@ The "rm" parameter is the name of the file to be deleted.
 $ <enter command to list all files and directories in order to confirm the file deletion>
 <type or copy-paste the result here>
 
+total 10
+drwxr-xr-x 1 bloper 197121    0 Jan 14 16:35 ./
+drwxr-xr-x 1 bloper 197121    0 Jan 14 15:37 ../
+-rw-r--r-- 1 bloper 197121  186 Jan 14 15:37 App.config
+-rw-r--r-- 1 bloper 197121 2712 Jan 14 15:37 Helloworld.csproj
+-rw-r--r-- 1 bloper 197121  266 Jan 14 15:37 Program.cs
+drwxr-xr-x 1 bloper 197121    0 Jan 14 15:37 Properties/
 
 ----
 17. Change directory to the csharp-helloworld directory using either one of the
@@ -330,6 +381,7 @@ Regardless of the option you chose, check your new location.
 $ <enter command to display present working directory>
 <type or copy-paste your present working directory here>
 
+/c/workspace/exercises/01_Introduction_Tools/student-exercise/dotnet/csharp-helloworld
 
 ----
 18. Create a documentation directory named "docs" under csharp-helloworld, and then
@@ -340,6 +392,9 @@ $ mkdir docs
 $ <enter the command to change directory to "docs" using a relative path>
 $ <enter command to display present working directory>
 <type or copy-paste your present working directory here>
+
+/c/workspace/exercises/01_Introduction_Tools/student-exercise/dotnet/csharp-helloworld/docs
+
 
 ----
 19. Create a new file name "readme.txt" using VS Code, and add the text
