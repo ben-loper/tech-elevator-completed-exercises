@@ -420,12 +420,15 @@ namespace VariableNaming
             int numberOfTeddyBearPerShelf = 7;
             int totalNumberOfFullShelves = totalNumberOfTeddyBears / numberOfTeddyBearPerShelf;
 
-           
+
             /*
             47. Susie’s mother collected all family pictures and wanted to place all of
             them in an album. If an album can contain 20 pictures, how many
             albums will she need if there are 480 pictures?
             */
+            int totalNumberOfPictures = 480;
+            int numberOfPicturesAnAlbumCanHold = 20;
+            int totalNumberOfAlbumsNeeded = totalNumberOfPictures / numberOfPicturesAnAlbumCanHold;
 
             /*
             48. Joe, Susie’s brother, collected all 94 trading cards scattered in his
@@ -433,6 +436,10 @@ namespace VariableNaming
             cards, how many boxes were filled and how many cards are there in
             the unfilled box?
             */
+            int totalNumberOfTradingCards = 94;
+            int numberOfCardsOneBoxCanHold = 8;
+            int numberOfFullBoxes = totalNumberOfTradingCards / numberOfCardsOneBoxCanHold;
+            int numberOfCardsLeftAfterFillingBoxes = totalNumberOfTradingCards - totalNumberOfTradingCards / numberOfCardsOneBoxCanHold;
 
             /*
             49. Susie’s father repaired the bookshelves in the reading room. If he has
