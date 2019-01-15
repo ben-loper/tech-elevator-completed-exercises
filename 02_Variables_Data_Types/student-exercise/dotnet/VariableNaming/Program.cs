@@ -361,43 +361,66 @@ namespace VariableNaming
             tiny glass jars. If each jar is to contain six cookies each, how many
             cookies will not be placed in a jar?
             */
+            int totalNumberOfGingerBreadCookies = 47;
+            int numberOfGingerBreadCookiesEachJarCanHold = 6;
+            int numberOfCookiesNotPlacedInJar = totalNumberOfGingerBreadCookies % numberOfGingerBreadCookiesEachJarCanHold;
 
             /*
             41. She also prepared 59 croissants which she plans to give to her 8
             neighbors. If each neighbor received and equal number of croissants,
             how many will be left with Marian?
             */
+            int totalNumberOfCroissants = 59;
+            int numberNeighbors = 8;
+            int numberOfCroissantsLeftOver = totalNumberOfCroissants % numberNeighbors;
 
             /*
             42. Marian also baked oatmeal cookies for her classmates. If she can
             place 12 cookies on a tray at a time, how many trays will she need to
             prepare 276 oatmeal cookies at a time?
             */
+            int numberOfCookiesThatCanBePlaceOnTray = 12;
+            int totalNumberOfOatmealCookies = 276;
+            int numberOfOatmealCookieTrays = totalNumberOfOatmealCookies / numberOfCookiesThatCanBePlaceOnTray;
+
 
             /*
             43. Marian’s friends were coming over that afternoon so she made 480
             bite-sized pretzels. If one serving is equal to 12 pretzels, how many
             servings of bite-sized pretzels was Marian able to prepare?
             */
+            int totalNumberOfPretzels = 480;
+            int numberOfPretzelsInOneServing = 12;
+            int totalNumberOfServings = totalNumberOfPretzels / numberOfPretzelsInOneServing;
 
             /*
             44. Lastly, she baked 53 lemon cupcakes for the children living in the city
             orphanage. If two lemon cupcakes were left at home, how many
             boxes with 3 lemon cupcakes each were given away?
             */
+            int totalNumberOfLemonCupcakes = 51;
+            int numberOfLemonCupcakesInBox = 3;
+            int totalNumberOfBoxesOfLemonCupcakesGivenAway = totalNumberOfLemonCupcakes / numberOfLemonCupcakesInBox;
 
             /*
             45. Susie's mom prepared 74 carrot sticks for breakfast. If the carrots
             were served equally to 12 people, how many carrot sticks were left
             uneaten?
             */
+            int totalNumberOfCarrotSticks = 74;
+            int numberOfPeopleServed = 12;
+            int numberOfCarrotsLeftOver = totalNumberOfCarrotSticks % numberOfPeopleServed;
 
             /*
             46. Susie and her sister gathered all 98 of their teddy bears and placed
             them on the shelves in their bedroom. If every shelf can carry a
             maximum of 7 teddy bears, how many shelves will be filled?
             */
+            int totalNumberOfTeddyBears = 98;
+            int numberOfTeddyBearPerShelf = 7;
+            int totalNumberOfFullShelves = totalNumberOfTeddyBears / numberOfTeddyBearPerShelf;
 
+           
             /*
             47. Susie’s mother collected all family pictures and wanted to place all of
             them in an album. If an album can contain 20 pictures, how many
