@@ -201,102 +201,160 @@ namespace VariableNaming
 
             decimal totalCostOfIceCreamCones = costOfIceCreamCoan * numberOfIceCreamCoans;
 
-            Console.WriteLine(totalCostOfIceCreamCones);
-            Console.ReadKey();
-
 
             /*
             22. Mrs. Hilt wants to make a border around her garden. She needs 125
             rocks to complete the border. She has 64 rocks. How many more rocks
             does she need to complete the border?
             */
+            int totalNumberOfRequiredRocks = 125;
+            int numberOfCurrentRocks = 64;
+            int numberOfMoreRocksNeeded = totalNumberOfRequiredRocks - numberOfCurrentRocks;
 
             /*
             23. Mrs. Hilt had 38 marbles. She lost 15 of them. How many marbles does
             she have left?
             */
+            int initialNumberOfMarbles = 38;
+            int numberOfMarblesMrsHiltLost = 15;
+            int numberOfMarblesLeft = initialNumberOfMarbles - numberOfMarblesMrsHiltLost;
+
 
             /*
             24. Mrs. Hilt and her sister drove to a concert 78 miles away. They drove 32
             miles and then stopped for gas. How many miles did they have left to drive?
             */
+            int numberOfMilesConcertIsAway = 78;
+            int numberOfMilesTravelled = 32;
+            int numberOfMilesLeft = numberOfMilesConcertIsAway - numberOfMilesTravelled;
 
             /*
             25. Mrs. Hilt spent 1 hour and 30 minutes shoveling snow on Saturday
             morning and 45 minutes shoveling snow on Saturday afternoon. How
             much total time did she spend shoveling snow?
             */
+            int numberOfMinutesShovelingSnowOnSaturday = 90;
+            int numberOfMinutesShovelingSnowOSaturdayAfternoon = 45;
+            int totalTimeShovelingInMinutes = numberOfMinutesShovelingSnowOnSaturday - numberOfMinutesShovelingSnowOSaturdayAfternoon;
 
             /*
             26. Mrs. Hilt bought 6 hot dogs. Each hot dog cost 50 cents. How much
             money did she pay for all of the hot dogs?
             */
+            int numberOfHotDogsBought = 6;
+            decimal costOfOneHotDog = .5M;
+            decimal totalCostForHotDogs = numberOfHotDogsBought * costOfOneHotDog;
+
 
             /*
             27. Mrs. Hilt has 50 cents. A pencil costs 7 cents. How many pencils can
             she buy with the money she has?
             */
 
+            int totalAmountMrsHiltHasInCents = 50;
+            int costOfAPencilInCents = 7;
+            int totalNumberOfPencilsMrsHiltCanBuy = totalAmountMrsHiltHasInCents / costOfAPencilInCents;
+
+
+
             /*
             28. Mrs. Hilt saw 33 butterflies. Some of the butterflies were red and others
             were orange. If 20 of the butterflies were orange, how many of them
             were red?
             */
+            int totalNumberOfButterflies = 33;
+            int numberOfOrangeButterflies = 20;
+            int numberOfRedButterflies = totalNumberOfButterflies - numberOfOrangeButterflies;
 
             /*
             29. Kate gave the clerk $1.00. Her candy cost 54 cents. How much change
             should Kate get back?
             */
+            decimal amountOfMoneyGiven = 1.0M;
+            decimal costOfCandy = .54M;
+            decimal amountOfMoneyGivenBack = amountOfMoneyGiven - costOfCandy;
+
+
 
             /*
             30. Mark has 13 trees in his backyard. If he plants 12 more, how many trees
             will he have?
             */
+            int initialAmountOfTrees = 13;
+            int numberOfPlantedTrees = 12;
+            int totalNumberOfTrees = initialAmountOfTrees + numberOfPlantedTrees;
 
             /*
             31. Joy will see her grandma in two days. How many hours until she sees
             her?
             */
+            int numberOfHoursInADay = 24;
+            int numberOfDaysUntilSeeingGrandma = 2;
+            int numberOfHoursUntilSeeingGrandma = numberOfHoursInADay * numberOfDaysUntilSeeingGrandma;
 
             /*
             32. Kim has 4 cousins. She wants to give each one 5 pieces of gum. How
             much gum will she need?
             */
+            int numberOfCousins = 4;
+            int desiredNumberOfPiecesOfGum = 5;
+            int totalNumberOfPiecesOfGumNeeded = numberOfCousins * desiredNumberOfPiecesOfGum;
 
             /*
             33. Dan has $3.00. He bought a candy bar for $1.00. How much money is
             left?
             */
+            decimal amountOfMoneyDanInitiallyHas = 3.0M;
+            decimal costOfCandyBar = 1.0M;
+            decimal remaingAmountOfMoneyAfterPurchase = amountOfMoneyDanInitiallyHas - costOfCandyBar;
 
             /*
             34. 5 boats are in the lake. Each boat has 3 people. How many people are
             on boats in the lake?
             */
+            int numberOfBoats = 5;
+            int numberOfPeopleOnEachBoat = 3;
+            int totalNumberOfPeopleOnBoatsInLake = numberOfBoats * numberOfPeopleOnEachBoat;
 
             /*
             35. Ellen had 380 legos, but she lost 57 of them. How many legos does she
             have now?
             */
+            int initialNumberOfLegos = 300;
+            int numberOfLegosLost = 57;
+            int numberOfRemainingLegos = initialNumberOfLegos - numberOfLegosLost;
 
             /*
             36. Arthur baked 35 muffins. How many more muffins does Arthur have to
             bake to have 83 muffins?
             */
+            int numberOfMuffinsBaked = 35;
+            int desiredNumberOfMuffins = 83;
+            int numberOfMuffinsThatNeedBaking = desiredNumberOfMuffins - numberOfMuffinsBaked;
 
             /*
             37. Willy has 1400 crayons. Lucy has 290 crayons. How many more
             crayons does Willy have then Lucy?
             */
+            int numberOfCrayonsWillyHas = 1400;
+            int numberOfCrayonsLucyHas = 290;
+            int numberOfHowManyMoreWillyHasThanLucy = numberOfCrayonsWillyHas - numberOfCrayonsLucyHas;
 
             /*
             38. There are 10 stickers on a page. If you have 22 pages of stickers, how
             many stickers do you have?
             */
+            int numberOfStickersOnPage = 10;
+            int numberOfPagesOfStickers = 22;
+            int totalNumberOfStickers = numberOfStickersOnPage * numberOfPagesOfStickers;
 
             /*
             39. There are 96 cupcakes for 8 children to share. How much will each
             person get if they share the cupcakes equally?
             */
+            int totalNumberOfCupcakes = 96;
+            int numberOfChildren = 8;
+            int numberOfCupcakesEachChildWillGet = totalNumberOfCupcakes / numberOfChildren;
 
             /*
             40. She made 47 gingerbread cookies which she will distribute equally in
