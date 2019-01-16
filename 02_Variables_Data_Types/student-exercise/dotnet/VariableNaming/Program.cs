@@ -446,11 +446,17 @@ namespace VariableNaming
             210 books to be distributed equally on the 10 shelves he repaired,
             how many books will each shelf contain?
             */
+            int totalNumberOfBooksSusiesFatherHas = 210;
+            int NumberOfRepaireShelves= 10;
+            int numberOfBooksOnEachShelve = totalNumberOfBooksSusiesFatherHas / NumberOfRepaireShelves;
 
             /*
             50. Cristina baked 17 croissants. If she planned to serve this equally to
             her seven guests, how many will each have?
             */
+            int numberOfCroissants = 17;
+            int numberOfGuests = 7;
+            int numberOfBooksEquallySharedForEachGuest = numberOfCroissants / numberOfGuests;
 
             /*
                 CHALLENGE PROBLEMS
@@ -470,7 +476,11 @@ namespace VariableNaming
             with a period.
             Example: "Hopper, Grace B."
             */
+            string firstName = "Ben";
+            char middileInitial = 'P';
+            String lastName = "Loper";
 
+            string fullName = lastName + ", " + middileInitial + " " + firstName;
             /*
             The distance between New York and Chicago is 800 miles, and the train has already travelled 537 miles.
             What percentage of the trip has been completed?
