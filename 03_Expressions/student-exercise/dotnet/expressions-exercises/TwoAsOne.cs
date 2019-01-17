@@ -17,7 +17,7 @@ namespace Exercises
         public bool TwoAsOne(int a, int b, int c)
         {
             bool result = false;
-
+            
             if((a + b == c) || (a + b == c) || (c + a == b))
             {
                 result = true;

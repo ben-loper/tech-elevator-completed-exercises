@@ -16,7 +16,23 @@ namespace Exercises
          */
         public bool Sum28(int[] nums)
         {
-            return false;
+            bool result = false;
+
+            int arrayTotal = 0;
+
+            for(int i = 0; i < nums.Length; i++)
+            {
+                if(nums[i] == 2)
+                {
+                    arrayTotal += nums[i];
+                }
+            }
+            if(arrayTotal == 8)
+            {
+                result = true;
+            }
+
+            return result;
         }
 
     }
