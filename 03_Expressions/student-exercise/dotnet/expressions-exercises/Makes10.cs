@@ -18,9 +18,12 @@ namespace Exercises
         {
             bool result = false;
 
+            if((a == 10 || b == 10) || (a + b == 10))
+            {
+                result = true;
+            }
 
-
-            return false;
+            return result;
         }
 
     }

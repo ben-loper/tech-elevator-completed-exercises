@@ -17,7 +17,28 @@ namespace Exercises
       */
         public int Max1020(int a, int b)
         {
-            return 0;
+            int result = 0;
+            bool aIsInRange = a >= 10 && a <= 20;
+            bool bIsInRange = b >= 10 && b <= 20;
+
+            if (aIsInRange || bIsInRange)
+            {
+                if (!aIsInRange)
+                {
+                    result = b;
+                } else if (!bIsInRange)
+                {
+                    result = a;
+                } else if (a > b)
+                {
+                    result = a;
+                } else
+                {
+                    result = b;
+                }
+            }
+
+            return result;
         }
 
     }
