@@ -17,7 +17,18 @@ namespace Exercises
          */
         public int Diff21(int n)
         {
-            return 0;
+            int result = n - 21;
+
+            //Returns the absolute value regardless of if result is negative
+            result = (int)(Math.Abs(result));
+
+            if(n > 21)
+            {
+                result = result * 2;
+            }
+
+
+            return result;
         }
     }
 }

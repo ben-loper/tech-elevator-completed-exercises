@@ -16,7 +16,17 @@ namespace Exercises
         */
         public int IntMax(int a, int b, int c)
         {
-            return 0;
+            int result = c;
+
+            if(a > b && a > c)
+            {
+                result = a;
+            } else if(b > a && b > c)
+            {
+                result = b;
+            }
+
+            return result;
         }
 
     }
