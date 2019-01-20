@@ -31,11 +31,10 @@ namespace Fibonacci
                 Console.Write("Please enter the Fibonacci number: ");
                 int givenValue = int.Parse(Console.ReadLine());
 
-                
-                if (givenValue == 0)
+                if (givenValue == 0 || givenValue == 1)
                 {
                     Console.WriteLine();
-                    Console.WriteLine("0");
+                    Console.WriteLine("0, 1, 1");
                 }
                 else
                 {
@@ -47,9 +46,9 @@ namespace Fibonacci
                     {
                         Console.Write($", {results[i]}");
                     }
-                    
-                }
-                Console.WriteLine();
+                    Console.WriteLine();
+                }   
+                
                 Console.WriteLine();
                 Console.WriteLine("Press any key to continue...");
                 Console.ReadKey();
@@ -59,7 +58,7 @@ namespace Fibonacci
 
         public static int[] FindFibonacciSequence(int givenValue)
         {            
-            var fibonacciNumbers = new List<int> { 0, 1 };
+            var fibonacciNumbers = new List<int> { 0, 1, };
             int i = 1;
 
             //Loop through the list adding the previous 2 values, adding the result
@@ -76,7 +75,7 @@ namespace Fibonacci
             //is greater than 2 values in length and the value is not equal
             //to the given value
 
-            if (fibonacciNumbers.Count > 2 && fibonacciNumbers[i] != givenValue)
+            if (fibonacciNumbers.Count > 3 && fibonacciNumbers[i] != givenValue)
             {
                 fibonacciNumbers.RemoveRange(i, 1);
             }
