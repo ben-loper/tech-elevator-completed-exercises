@@ -24,9 +24,9 @@ namespace LinearConvert
          */
         static void Main(string[] args)
         {
-            bool exit = false;
+            bool isRunning = true;
 
-            while (!exit)
+            while (isRunning)
             {
                 Console.Clear();
                 
@@ -36,7 +36,7 @@ namespace LinearConvert
                 string enteredValue = Console.ReadLine();
                 if (enteredValue == "Q" || enteredValue == "q")
                 {
-                    exit = true;
+                    isRunning = false;
                 }
                 else
                 {
@@ -49,11 +49,11 @@ namespace LinearConvert
 
                     int convertedMeasurement = ConvertMeasurement(givenValue, selectedMeasurement);
 
-                    //Print the given temperature with the given temperature type and it's opposite equivelant
+                    //Print the given length with the given measurement type and it's opposite equivelant
                     Console.WriteLine($"{givenValue}{selectedMeasurement} is {convertedMeasurement}{measurmentConvertedToLabel}");
 
+                    Console.WriteLine();
                     Console.WriteLine("Press any key to continue...");
-                    Console.WriteLine("----------------------------");
                     Console.ReadKey();
                 }
             }

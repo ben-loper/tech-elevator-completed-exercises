@@ -22,9 +22,9 @@ namespace Fibonacci
          */
         static void Main(string[] args)
         {
-            bool exit = false;
+            bool isRunning = true;
 
-            while (!exit)
+            while (isRunning)
             {
                 Console.Clear();
               
@@ -49,6 +49,7 @@ namespace Fibonacci
                     }
                     
                 }
+                Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine("Press any key to continue...");
                 Console.ReadKey();

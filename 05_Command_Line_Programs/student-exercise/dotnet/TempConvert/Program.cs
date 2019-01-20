@@ -29,9 +29,9 @@ namespace TempConvert
     {
         static void Main(string[] args)
         {
-            bool exit = false;
+            bool isRunning = true;
 
-            while (!exit)
+            while (isRunning)
             {
                 Console.Clear();
                 
@@ -42,7 +42,7 @@ namespace TempConvert
                 //This was used while testing for an easy exit
                 if (enteredValue == "Q" || enteredValue == "q")
                 {
-                    exit = true;
+                    isRunning = false;
                 }
                 else 
                 {
@@ -58,8 +58,8 @@ namespace TempConvert
                     //Print the given temperature with the given temperature type and it's opposite equivelant
                     Console.WriteLine($"{givenValue}{selectedTemp} is {convertedTemp}{tempConvertedToLabel}");
 
+                    Console.WriteLine();
                     Console.WriteLine("Press any key to continue...");
-                    Console.WriteLine("----------------------------");
                     Console.ReadKey();
                 } 
             }
@@ -70,7 +70,7 @@ namespace TempConvert
         {
             int result;
 
-            if(givenTempType == 'F')
+            if(givenTempType == 'F' || givenTempType == 'f')
             {
                 result = (int)((givenValue - 32) / 1.8);
             }
