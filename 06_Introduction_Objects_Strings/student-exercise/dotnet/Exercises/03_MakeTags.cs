@@ -17,8 +17,8 @@ namespace Exercises
         MakeTags("cite", "Yay") → "<cite>Yay</cite>"
         */
         public string MakeTags(string tag, string word)
-        {
-            return null;
+        {  
+            return $"<{tag}>{word}</{tag}>";
         }
     }
 }

@@ -17,7 +17,16 @@ namespace Exercises
          */
         public string Left2(string str)
         {
-            return null;
+            string result = str;
+            string firstTwoChar;
+
+            if(str.Length > 2)
+            {
+                firstTwoChar = str.Substring(0, 2);
+                result = str.Substring(2) + firstTwoChar;
+            }
+            
+            return result;
         }
     }
 }
