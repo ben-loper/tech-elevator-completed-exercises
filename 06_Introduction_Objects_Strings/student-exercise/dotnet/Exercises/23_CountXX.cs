@@ -16,7 +16,18 @@ namespace Exercises
          */
         public int CountXX(string str)
         {
-            return 0;
+            int result = 0;
+
+            for(int i = 1; i < str.Length; i++)
+            {
+                if(str[i].ToString() == "x" && str[i-1].ToString() == "x")
+                {
+                    result++;
+                }
+            }
+
+
+            return result;
         }
     }
 }

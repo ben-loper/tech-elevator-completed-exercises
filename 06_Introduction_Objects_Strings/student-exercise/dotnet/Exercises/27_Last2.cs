@@ -17,7 +17,27 @@ namespace Exercises
          */
         public int Last2(string str)
         {
-            return 0;
+            int result = 0;
+
+            if (str.Length >= 2)
+            {
+                string twoCharComparision = str.Substring(str.Length - 2, 2);
+
+                char[] tempCharArray = str.ToCharArray();
+
+
+                for (int i = 1; i <= tempCharArray.Length - 2; i++)
+                {
+
+
+                    if (tempCharArray[i - 1].ToString() + tempCharArray[i].ToString() == twoCharComparision)
+                    {
+                        result++;
+                    }
+                }
+            }
+
+            return result;
         }
     }
 }

@@ -17,7 +17,25 @@ namespace Exercises
         */
         public string StringX(string str)
         {
-            return null;
+            string result = "";
+
+            if(str.Length == 1)
+            {
+                result = str;
+            } else if (str.Length > 1)
+            {
+                result += str.Substring(0, 1);
+
+                string[] resultArray = str.Substring(1, str.Length - 2).Split("x");
+
+                for (int i = 0; i < resultArray.Length; i++)
+                {
+                    result += resultArray[i];
+                }
+
+                result += str.Substring(str.Length - 1);
+            }
+            return result;
         }
     }
 }

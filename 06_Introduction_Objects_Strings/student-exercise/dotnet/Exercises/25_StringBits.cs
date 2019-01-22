@@ -16,7 +16,15 @@ namespace Exercises
          */
         public string StringBits(string str)
         {
-            return null;
+            char[] tempArray = str.ToCharArray();
+            string result = "";
+
+            for(int i = 0; i < tempArray.Length; i += 2)
+            {
+                result += tempArray[i];
+            }
+
+            return result;
         }
     }
 }
