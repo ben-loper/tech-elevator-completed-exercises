@@ -16,8 +16,19 @@ namespace Exercises
          */
         public List<string> DistinctValues(List<string> stringList)
         {
+            List<string> distinctValues = new List<string>();
 
-            return null;
+            List<string> stringListCopy = new List<string>();
+
+            foreach(string word in stringList)
+            {
+                if (!distinctValues.Contains(word))
+                {
+                    distinctValues.Add(word);
+                }
+            }
+
+            return distinctValues;
         }
     }
 }

@@ -18,10 +18,7 @@ namespace Exercises
         {
             List<string> resultList = new List<string>();
 
-            for(int i = 0; i < stringArray.Length; i++)
-            {
-                resultList.Add(stringArray[i]);
-            }
+            resultList.AddRange(stringArray);
 
             return resultList;
         }

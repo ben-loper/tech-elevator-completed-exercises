@@ -22,8 +22,10 @@ namespace Exercises
             if(str.Length == 1)
             {
                 result = str;
+
             } else if (str.Length > 1)
             {
+
                 result += str.Substring(0, 1);
 
                 string[] resultArray = str.Substring(1, str.Length - 2).Split("x");
