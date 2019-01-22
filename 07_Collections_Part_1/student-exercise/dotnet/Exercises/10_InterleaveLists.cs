@@ -22,6 +22,7 @@ namespace Exercises
 
             int i = 0;
 
+            //Both arrays are the same length
             if(listOne.Count == listTwo.Count)
             {
                 for (; i < listOne.Count; i++)
@@ -29,15 +30,19 @@ namespace Exercises
                     resultList.Add(listOne[i]);
                     resultList.Add(listTwo[i]);
                 }
-
+            
+             //listTwo is bigger than listOne
             } else if(listTwo.Count > listOne.Count)
             {
+                //Interweave values from the first list until we hit the end
+                //of listOne
                 for(; i < listOne.Count; i++)
                 {
                     resultList.Add(listOne[i]);
                     resultList.Add(listTwo[i]);
                 }
                 
+                //Add the remaining elements in listTwo to the results list
                 while(i < listTwo.Count)
                 {
                     resultList.Add(listTwo[i]);
