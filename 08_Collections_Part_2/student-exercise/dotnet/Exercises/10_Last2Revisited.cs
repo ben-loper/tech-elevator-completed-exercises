@@ -25,7 +25,29 @@ namespace Exercises
          */
         public Dictionary<string, int> Last2Revisited(string[] words)
         {
-            return null;
+
+            Dictionary<string, int> result = new Dictionary<string, int>();
+
+            string compareSubstring;
+
+            foreach (string word in words)
+            {
+                int count = 0;
+
+                compareSubstring = word.Substring(word.Length - 2, 2);
+
+                for (int i = 1; i < word.Length - 1; i++)
+                {
+                    if (word[i - 1].ToString() + word[i].ToString() == compareSubstring)
+                    {
+                        count++;
+                    }                    
+                }
+
+                result.Add(word, count); 
+            }
+
+            return result;
         }
     }
 }

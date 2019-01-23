@@ -21,7 +21,24 @@ namespace Exercises
          */
         public Dictionary<int, int> IntCount(int[] ints)
         {
-            return null;
+            Dictionary<int, int> numCountDict = new Dictionary<int, int>();
+
+            //Iterate through the array, counting how many times the specified word appears
+            foreach (int num in ints)
+            {
+                if (!numCountDict.ContainsKey(num))
+                {
+                    numCountDict.Add(num, 1);
+                }
+                else
+                {
+                    numCountDict[num] += 1;
+                }
+
+            }
+            //return the dictionary
+
+            return numCountDict;
         }
     }
 }

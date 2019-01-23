@@ -38,7 +38,29 @@ namespace Exercises
          */
         public string AnimalGroupName(string animalName)
         {
-            return null;
+            string result = "unknown";
+
+            Dictionary<string, string> animalDict = new Dictionary<string, string>();
+
+            
+                animalDict.Add("rhino", "Crash");
+                animalDict.Add("giraffe", "Tower");
+                animalDict.Add("elephant", "Herd");
+                animalDict.Add("lion", "Pride");
+                animalDict.Add("crow", "Murder");
+                animalDict.Add("pigeon", "Kit");
+                animalDict.Add("flamingo", "Pat");
+                animalDict.Add("deer", "Herd");
+                animalDict.Add("dog", "Pack");
+                animalDict.Add("crocodile", "Float");
+
+
+            if (animalDict.ContainsKey(animalName.ToLower()))
+            {
+                result = animalDict[animalName.ToLower()];
+            }
+            
+            return result;
         }
     }
 }
