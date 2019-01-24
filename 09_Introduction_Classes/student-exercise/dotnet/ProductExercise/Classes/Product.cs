@@ -5,9 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace TechElevator.Classes
-{
+{ 
     public class Product
     {
         // Class Code Goes Here
+        public string Name { get; set; }
+        public decimal Price { get; set; }
+        public double WeightInOunces { get; set; }
     }
 }
