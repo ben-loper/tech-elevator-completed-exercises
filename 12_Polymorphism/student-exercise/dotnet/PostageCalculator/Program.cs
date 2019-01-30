@@ -16,6 +16,8 @@ namespace PostageCalculator
             deliveries.Add(new ThirdClass());
             deliveries.Add(new FexEd());
             deliveries.Add(new FourDayGround());
+            deliveries.Add(new TwoDayBusiness());
+            deliveries.Add(new NextDay());
 
             Console.Write("Please enter the weight of the package: ");
             double packageWeight = double.Parse(Console.ReadLine());
@@ -28,22 +30,22 @@ namespace PostageCalculator
                 packageWeight *= 16;
             }
 
-            Console.Write("What distance will it be travelling? ");
+            Console.Write("What distance will it be traveling? ");
             int travelDistance = int.Parse(Console.ReadLine());
 
             Console.WriteLine();
             Console.WriteLine("Delivery Method".PadRight(30) + "$ cost");
-            Console.WriteLine("---------------------------------------");
+            Console.WriteLine("-------------------------------------");
 
             foreach(IDeliveryDriver delivery in deliveries)
             {
-                Console.WriteLine(DetermineDelivery(delivery).PadRight(30) + delivery.CalculateRate(travelDistance, packageWeight).ToString("C"));
+                Console.WriteLine(DetermineDeliveryTitle(delivery).PadRight(30) + delivery.CalculateRate(travelDistance, packageWeight).ToString("C"));
             }
 
             Console.ReadKey();
         }
 
-        public static string DetermineDelivery(IDeliveryDriver delivery)
+        public static string DetermineDeliveryTitle(IDeliveryDriver delivery)
         {
             string result = "Postal Service ";
 
@@ -63,16 +65,21 @@ namespace PostageCalculator
             {
                 result = "FexEd";
             }
-            if(delivery is SPU)
+            if(delivery is Spu)
             {
                 result = "SPU ";
 
                 if(delivery is FourDayGround)
                 {
                     result += "(4-Day Ground)";
+
                 } else if(delivery is TwoDayBusiness)
                 {
                     result += "(2-Day Business)";
+
+                } else if(delivery is NextDay)
+                {
+                    result += "(Next Day)";
                 }
             }
 

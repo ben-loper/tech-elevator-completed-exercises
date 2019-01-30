@@ -1,12 +1,13 @@
 ﻿namespace PostageCalculator.Classes
 {
-    class FourDayGround : Spu
+    public class NextDay : Spu
     {
         public override double CalculateRate(int distance, double weight)
         {
             double poundConversion = weight / 16;
 
-            return (poundConversion * 0.0050) * distance;
+            return (poundConversion * 0.075) * distance;
         }
     }
+
 }

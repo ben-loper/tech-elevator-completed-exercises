@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace PostageCalculator.Classes
+﻿namespace PostageCalculator.Classes
 {
-    public class SPU : IDeliveryDriver
+    public class Spu : IDeliveryDriver
     {
         public virtual double CalculateRate(int distance, double weight)
         {
