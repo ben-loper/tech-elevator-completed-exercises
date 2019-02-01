@@ -20,8 +20,8 @@ namespace Exercises.Tests
         {
 
             Assert.AreEqual(true, lucky.GetLucky(new int[] { 0, 2, 4 }), "Test 1: Input  [0, 2, 4]");
-            Assert.AreEqual(false, lucky.GetLucky(new int[] { 1, 2, 3 }), "Test 1: Input  [0, 2, 4]");
-            Assert.AreEqual(false, lucky.GetLucky(new int[] { 1, 2, 4 }), "Test 1: Input  [0, 2, 4]");
+            Assert.AreEqual(false, lucky.GetLucky(new int[] { 1, 2, 3 }), "Test 2: Input  [1, 2, 3]");
+            Assert.AreEqual(false, lucky.GetLucky(new int[] { 1, 2, 4 }), "Test 3: Input  [1, 2, 4]");
         }
     }
 }
