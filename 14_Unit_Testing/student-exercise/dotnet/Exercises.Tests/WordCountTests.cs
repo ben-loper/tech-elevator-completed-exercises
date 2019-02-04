@@ -21,7 +21,7 @@ namespace Exercises.Tests
             testDict.Add("black", 1);
             testDict.Add("sheep", 1);
 
-            CollectionAssert.AreEqual(testDict, test.GetCount(new string[] { "ba", "ba", "black", "sheep" }), 
+            CollectionAssert.AreEqual(testDict, test.GetCount(new string[] { "ba", "ba", "black", "sheep" }),
                                     "Test 1: Input \"ba\", \"ba\", \"black\", \"sheep\"");
 
             testDict.Clear();
@@ -44,6 +44,6 @@ namespace Exercises.Tests
 
             CollectionAssert.AreEqual(testDict, test.GetCount(new string[] { "c", "b", "a" }),
                                     "Test 4: \"c\", \"b\", \"a\"");
-        }
+        } 
     }
 }

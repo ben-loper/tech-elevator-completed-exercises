@@ -19,7 +19,18 @@ namespace Exercises
          */
         public int[] BiggerTwo(int[] a, int[] b)
         {
-            return new int[] { };
+            List<int> results = new List<int>();
+
+            if(a[0] + a[1] >= b[0] + b[1])
+            {
+                results.AddRange(a);
+            }
+            else
+            {
+                results.AddRange(b);
+            }
+
+            return results.ToArray();
         }
     }
 }

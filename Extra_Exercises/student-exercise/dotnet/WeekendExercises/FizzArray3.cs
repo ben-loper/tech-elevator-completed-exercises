@@ -18,7 +18,14 @@ namespace Exercises
          */
         public int[] FizzArray3(int start, int end)
         {
-            return new int[] { };
+            List<int> result = new List<int>();
+
+            for(int i = start; i < end; i++)
+            {
+                result.Add(i);
+            }
+
+            return result.ToArray();
         }
 
 

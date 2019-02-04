@@ -16,9 +16,26 @@ namespace Exercises
          */
         public bool LessBy10(int a, int b, int c)
         {
-            return false;
+            bool result = false;
+
+            if(DiffIsGreaterThanTen(a, b) || DiffIsGreaterThanTen(b, c) || DiffIsGreaterThanTen(a, c))
+            {
+                result = true;
+            }
+
+            return result;
         }
 
+        private bool DiffIsGreaterThanTen(int a, int b)
+        {
+            bool result = false;
 
+            if(a - b >= 10 || b - a >= 10)
+            {
+                result = true;
+            }
+
+            return result;
+        }
     }
 }

@@ -17,7 +17,19 @@ namespace Exercises
          */
         public int[] Fix23(int[] nums)
         {
-            return new int[] { };
+            List<int> results = new List<int>();
+
+            results.AddRange(nums);
+
+            for(int i = 0; i < 2; i++)
+            {
+                if(results[i] == 2 && results[i + 1] == 3)
+                {
+                    results[i + 1] = 0;
+                }
+            }
+
+            return results.ToArray();
         }
     }
 }

@@ -17,7 +17,17 @@ namespace Exercises
         */
         public bool EvenlySpaced(int a, int b, int c)
         {
-            return false;
+            bool result = false;
+
+            List<int> numsList = new List<int>() { a, b, c };
+            numsList.Sort();
+
+            if(numsList[2] - numsList[1] == numsList[1] - numsList[0])
+            {
+                result = true;
+            }
+
+            return result;
         }
     }
 }

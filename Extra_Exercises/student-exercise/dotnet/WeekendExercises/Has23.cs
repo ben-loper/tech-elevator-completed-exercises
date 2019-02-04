@@ -16,7 +16,13 @@ namespace Exercises
         */
         public bool Has23(int[] nums)
         {
-            return false;
+            bool result = false;
+
+            if(nums[0] == 2 || nums[0] == 3 || nums[1] == 2 || nums[1] == 3)
+            {
+                result = true;
+            } 
+            return result;
         }
     }
 }

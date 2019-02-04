@@ -16,7 +16,13 @@ namespace Exercises
          */
         public int[] PlusTwo(int[] a, int[] b)
         {
-            return new int[] { };
+            List<int> results = new List<int>();
+
+            results.AddRange(a);
+
+            results.AddRange(b);
+
+            return results.ToArray();
         }
 
 

@@ -18,7 +18,17 @@ namespace Exercises
          */
         public int GreenTicket(int a, int b, int c)
         {
-            return 0;
+            int result = 0;
+
+            if (a == b && b == c)
+            {
+                result = 20;
+            } else if (a == b || b == c || a == c)
+            {
+                result = 10;
+            }
+
+            return result;
         }
 
     }

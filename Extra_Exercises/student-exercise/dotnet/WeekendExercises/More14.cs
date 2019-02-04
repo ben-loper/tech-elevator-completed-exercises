@@ -16,7 +16,22 @@ namespace Exercises
          */
         public bool More14(int[] nums)
         {
-            return false;
+            int onesCount = 0;
+            int foursCount = 0;
+
+            foreach(int num in nums)
+            {
+                if(num == 1)
+                {
+                    onesCount++;
+                }
+                else if(num == 4)
+                {
+                    foursCount++;
+                }
+            }
+
+            return (onesCount > foursCount);
         }
 
 

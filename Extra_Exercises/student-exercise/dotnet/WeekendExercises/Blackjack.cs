@@ -18,9 +18,39 @@ namespace Exercises
          */
         public int Blackjack(int a, int b)
         {
-            return 0;
+            const int HighestScore = 21;
+            int result = b;
+
+            bool numAIsBusted = IsBusted(a);
+            bool numBIsBusted = IsBusted(b);
+
+            if(numAIsBusted && numBIsBusted)
+            {
+                result = 0;
+            }
+            else if(!numAIsBusted && numBIsBusted ^ HighestScore - a < HighestScore - b)
+            {
+                result = a;
+            }
+            else if(numAIsBusted && !numBIsBusted ^ HighestScore - b < HighestScore - a)
+            {
+                result = b;
+            }
+
+            return result;
         }
+        
+        private bool IsBusted(int num)
+        {
+            const int HighestScore = 21;
+            bool result = false;
 
+            if(num > HighestScore)
+            {
+                result = true;
+            }
 
+            return result;
+        }
     }
 }
