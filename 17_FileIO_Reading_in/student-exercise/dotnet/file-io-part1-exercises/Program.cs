@@ -45,7 +45,7 @@ namespace file_io_part1_exercises
                 try
                 {
                     Console.WriteLine();
-                    question.DisplayQuestionsAndAnswer();
+                    Console.WriteLine(question.DisplayQuestionsAndAnswer());
 
                     Console.Write("Your answer: ");
 

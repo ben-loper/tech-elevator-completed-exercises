@@ -50,22 +50,22 @@ namespace file_io_part1_exercises
             }
         }
 
-        public void DisplayQuestionsAndAnswer()
+        public string DisplayQuestionsAndAnswer()
         {
-            Console.WriteLine(Question);
+            string questionAndAnswers = Question + "\n";
 
             for (int i = 0; i < Answers.Count; i++)
             {
-                Console.WriteLine($"{i + 1}. {Answers[i]}");
+                questionAndAnswers += $"{i + 1}. {Answers[i]}\n";
             }
-            Console.WriteLine();
+            return questionAndAnswers;
         }
 
         public bool AnswerQuestion(int answer)
         {
             bool result = false;
 
-            if (Answers[answer - 1].ToLower() == CorrectAnswer.ToLower())
+            if (Answers[answer - 1] == CorrectAnswer)
             {
                 result = true;
             }
