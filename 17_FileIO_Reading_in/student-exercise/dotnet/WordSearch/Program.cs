@@ -7,9 +7,7 @@ namespace WordSearch
     {
         static void Main(string[] args)
         {
-            //Keeps the program running for easier testing
-            while (true)
-            {
+            
                 Console.Clear();
                 //1. Ask the user for the search string
 
@@ -47,7 +45,7 @@ namespace WordSearch
                 SearchForWord(searchTerm, isCaseSensitive, filePath);
 
                 Console.ReadKey();
-            }
+            
         }
 
 
