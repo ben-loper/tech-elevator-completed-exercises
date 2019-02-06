@@ -1,5 +1,7 @@
 ﻿using System;
 using System.IO;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace file_io_part1_exercises
 {
@@ -7,7 +9,6 @@ namespace file_io_part1_exercises
     {
         static void Main(string[] args)
         {
-            Quiz quiz = new Quiz();
 
             //string filePath = @"C:\workspace\exercises\17_FileIO_Reading_in\student-exercise\dotnet\sample-quiz-file.txt";
 
@@ -22,23 +23,11 @@ namespace file_io_part1_exercises
                 filePath = Console.ReadLine();
             }
 
-            try
-            {
-                using (StreamReader sr = new StreamReader(filePath))
-                {
-                    while (!sr.EndOfStream)
-                    {
-                        string line = sr.ReadLine();
+            Quiz quiz = ReadQuizFromFile(filePath);
 
-                        quiz.AddQuestionToList(new QuizQuestion(line));
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                Console.ReadKey();
-            }
+            string xmlPath = Path.ChangeExtension(filePath, "xml");
+
+            SerializeQuizToXML(xmlPath, quiz);
 
             foreach(QuizQuestion question in quiz.QuizQuestions)
             {
@@ -69,6 +58,52 @@ namespace file_io_part1_exercises
             Console.WriteLine($"You got {quiz.NumOfCorrectAnswers} answer(s) correct out of the {quiz.NumOfQuestions} questions asked.");
             Console.ReadKey();
 
+        }
+
+        public static Quiz ReadQuizFromFile(string filePath)
+        {
+            Quiz quiz = new Quiz();
+
+            try
+            {
+                using (StreamReader sr = new StreamReader(filePath))
+                {
+                    while (!sr.EndOfStream)
+                    {
+                        string line = sr.ReadLine();
+
+                        quiz.AddQuestionToList(new QuizQuestion(line));
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                Console.ReadKey();
+            }
+
+            return quiz;
+        }
+
+        public static void SerializeQuizToXML(string destinationFilePath, Quiz quiz)
+        {
+            XmlSerializer xmlSerializer = new XmlSerializer(quiz.GetType());
+            using (StringWriter strWriter = new StringWriter())
+            {
+                using (XmlWriter xmlWriter = XmlWriter.Create(strWriter))
+                {
+                    xmlSerializer.Serialize(xmlWriter, quiz);
+                    string outXml = strWriter.ToString();
+                    
+
+                    if (File.Exists(destinationFilePath))
+                    {
+                        File.Delete(destinationFilePath);
+                    }
+
+                    File.WriteAllText(destinationFilePath, outXml);
+                }
+            }
         }
     }
 }

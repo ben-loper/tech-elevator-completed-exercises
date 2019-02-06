@@ -4,18 +4,24 @@ using System.Text;
 
 namespace file_io_part1_exercises
 {
+    [Serializable]
     public class QuizQuestion
     {
-        public string Question { get; private set; }
+        public string Question { get; set; }
 
         public List<string> Answers = new List<string>();
 
-        public string CorrectAnswer { get; private set; }
+        public string CorrectAnswer { get; set; }
         
 
         public QuizQuestion(string questionAndAnswers)
         {
             CreateQuestionAndAnswers(questionAndAnswers);
+        }
+
+        public QuizQuestion()
+        {
+
         }
 
         private void DetermineCorrectAnswer(string[] answers)

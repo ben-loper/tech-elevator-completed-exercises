@@ -5,9 +5,10 @@ using System.Text;
 
 namespace file_io_part1_exercises
 {
+    [Serializable]
     public class Quiz
     {
-        public int NumOfCorrectAnswers { get; private set; } = 0;
+        public int NumOfCorrectAnswers { get; set; } = 0;
 
         public int NumOfQuestions
         {
