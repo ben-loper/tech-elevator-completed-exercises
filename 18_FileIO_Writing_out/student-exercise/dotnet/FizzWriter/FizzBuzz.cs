@@ -4,7 +4,7 @@ using System.Text;
 
 namespace FizzWriter
 {
-    public static class FizzBuzz
+    public abstract class FizzBuzz
     {
         public static string FizzBuzzBuilder(int num)
         {
