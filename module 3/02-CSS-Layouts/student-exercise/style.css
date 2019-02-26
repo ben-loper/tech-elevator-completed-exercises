@@ -1,6 +1,7 @@
 :root {
     --blue: #00adee;
     --grey: #505355;
+    --bg-color: rgba(192, 192, 192, 0.1);
 }
   
 * {
@@ -11,4 +12,81 @@
 html {
     font-size: 16px;
 }
+
+#student-grid {
+    display: grid;   
+    
+    grid-template-columns: 1fr 1fr 1fr;
+    
+    grid-gap: 10px 50px; 
+    
+    grid-template-areas:
+        "student-quote student-quote student-picture"
+        "student-profile student-profile student-contact"
+        "experience experience experience";
+    
+    justify-items: start;        
+}
+
+#student-picture {
+    grid-area: student-picture;
+    justify-self: center;
+}
+
+#student-quote {
+    grid-area: student-quote;
+    color: var(--grey);
+}
+
+#student-profile {
+    grid-area: student-profile;
+}
+
+#student-contact {
+    grid-area: student-contact;
+    justify-self: center;
+    text-align: center;
+    color: var(--grey);
+    
+}
+
+#experience {
+    grid-area: experience;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+}
+
+#experience div {
+    width: 30%;
+    
+}
+
+#experience h3 {
+    color: var(--blue);
+}
+
+body {
+    margin-right: 8%;
+    margin-left: 8%;
+    background-color: var(--bg-color);
+}
+
+.headline {
+    color: var(--grey);
+    font-size: 45px;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+header img {
+    width: 230px;
+    
+}
+
+#student-picture img{
+    border-radius: 50%;
+    max-width: 220px;
+}
+
 
