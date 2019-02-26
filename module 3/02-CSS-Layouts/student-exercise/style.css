@@ -47,7 +47,7 @@ html {
     justify-self: center;
     text-align: center;
     color: var(--grey);
-    
+    font-style: oblique;
 }
 
 #experience {
