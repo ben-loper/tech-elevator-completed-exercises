@@ -25,17 +25,18 @@ html {
         "student-profile student-profile student-contact"
         "experience experience experience";
     
-    justify-items: start;        
+    justify-items: center;        
 }
 
 #student-picture {
     grid-area: student-picture;
-    justify-self: center;
+    justify-self: center self-start;
 }
 
 #student-quote {
     grid-area: student-quote;
     color: var(--grey);
+    align-self: center;
 }
 
 #student-profile {
@@ -58,8 +59,8 @@ html {
 }
 
 #experience div {
-    width: 30%;
-    
+    width: 400px;
+
 }
 
 #experience h3 {
