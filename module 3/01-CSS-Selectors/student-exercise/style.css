@@ -28,7 +28,7 @@
     display: inline-block;
     vertical-align: top;
     position: fixed; 
-    width: 250px; 
+    width: 220px; 
     border-right: 1px var(--light-blue) solid;
     height: 820px;
     
@@ -63,6 +63,8 @@
     display: inline-block;
     width: 99%;
     padding-left: 270px;
+    max-width: 2000px;
+    min-width: 1500px
   }
 
   aside img{
@@ -79,6 +81,7 @@
   main > img {
     width: 100%;
     margin-bottom: 20px;
+    max-width: 2000px;
   }
 
   #what-we-do{
