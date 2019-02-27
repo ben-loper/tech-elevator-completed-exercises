@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewData["Title"] = "Fibonacci";
+}
+
+@model int;
+<style>   
+    ul li:first-child {
+        color: #228b22;
+    }
+
+    ul li:last-child {
+        color: #b71b1b;
+    }
+</style>
+
+<h2>Fibonacci</h2>
+
+<nav>
+    <ul>
+        <li><a asp-controller="Home" asp-action="Fibonacci" asp-route-max=20>20</a></li>
+        <li><a asp-controller="Home" asp-action="Fibonacci" asp-route-max=50>50</a></li>
+        <li><a asp-controller="Home" asp-action="Fibonacci" asp-route-max=100>100</a></li>
+    </ul>
+</nav>
+
+<ul>
+
+    @{
+        int previousNum = 1;
+        int tempCurrentNum;
+        int currentNum = 2;
+
+        <li>@previousNum</li>
+
+        while (currentNum < Model)
+        {
+            <li>@currentNum</li>
+
+            tempCurrentNum = previousNum + currentNum;
+
+            previousNum = currentNum;
+
+            currentNum = tempCurrentNum;
+        }
+    }
+</ul>

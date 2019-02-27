@@ -1,0 +1,27 @@
+﻿@using IntroToRazor.Web.Models;
+
+@{
+    ViewData["Title"] = "Fibonacci";
+}
+
+@model EchoModel
+
+<h2>Echo</h2>
+
+<nav>
+    <ul>
+        <li><a href="http://localhost:63286/Home/Echo?numoftimes=10&phrase=Echo">Echo 10</a></li>
+        <li><a href="http://localhost:63286/Home/Echo?numoftimes=20&phrase=Hello!">Hello! 20</a></li>
+        <li><a href="http://localhost:63286/Home/Echo?numoftimes=50&phrase=Goodbye!">Goodbye! 50</a></li>
+    </ul>
+</nav>
+<ul>
+    @{
+        int fontSize = Model.NumOfTimes;
+        for (int i = 0; i < Model.NumOfTimes; i++)
+        {
+            <li style="font-size: @(fontSize)px">@Model.Phrase</li>
+            fontSize--;
+        }
+    }
+</ul>

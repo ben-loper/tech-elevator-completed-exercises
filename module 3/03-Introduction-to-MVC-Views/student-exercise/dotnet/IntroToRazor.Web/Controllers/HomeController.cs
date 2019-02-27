@@ -20,28 +20,25 @@ namespace IntroToRazor.Web.Controllers
         // home/fizzbuzz?number=50 (sets number to 50)
         public IActionResult FizzBuzz(int number = 100)
         {
-            ViewData["number"] = number;
+            //ViewData["number"] = number;
 
-            return View();
+            return View(number);
         }
 
         // home/fibonacci (defaults to 20)
         // home/fibonacci?max=30 (sets max to 30)
         public IActionResult Fibonacci(int max = 20)
         {
-            ViewData["max"] = max;
+            //ViewData["max"] = max;
 
-            return View();
+            return View(max);
         }
 
         // home/echo?word=hello world&count=20
         // home/echo
-        public IActionResult Echo(string word = "pick a word", int count = 10)
+        public IActionResult Echo(EchoModel echo)
         {
-            ViewData["word"] = word;
-            ViewData["count"] = count;
-
-            return View();
+            return View(echo);
         }
 
 
