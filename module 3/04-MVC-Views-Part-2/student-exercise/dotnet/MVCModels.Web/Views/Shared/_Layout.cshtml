@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - MVCModels.Web</title>
+    <title>@RenderSection("Title", true)</title>
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -14,7 +14,9 @@
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+
     </environment>
+    @RenderSection("StyleSheet", false)
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -26,11 +28,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-controller="Home" asp-action="Index" class="navbar-brand">MVC Models</a>
+                <a asp-controller="Products" asp-action="Index" class="navbar-brand">MVC Models</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li><a asp-controller="Products" asp-action="Index">Home</a></li>
                     <li><a asp-controller="Recipes" asp-action="Index">Recipes</a></li>
                     <li><a asp-controller="Products" asp-action="Index">Products</a></li>
                 </ul>

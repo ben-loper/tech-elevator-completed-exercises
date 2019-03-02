@@ -36,7 +36,7 @@ namespace IntroToRazor.Web.Controllers
 
         // home/echo?word=hello world&count=20
         // home/echo
-        public IActionResult Echo(EchoModel echo)
+        public IActionResult Echo(EchoViewModel echo)
         {
             return View(echo);
         }

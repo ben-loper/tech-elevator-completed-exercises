@@ -1,0 +1,128 @@
+﻿@media screen and (max-width: 600px) {
+    .page-title {
+        margin-right: 30%;
+        margin-top: 10px;
+    }
+    
+    main {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-row-gap: 20px;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    .product-img {
+        height: 150px;
+    }
+
+    .avg-rating-img {
+        width: 110px;
+        margin-bottom: 5px;
+    }
+
+    .product-row {
+        border-bottom: 1px #F0F0F0 solid;
+        padding-bottom: 15px;
+    }
+
+    .best-seller-tag {
+        width: 100px;
+        display: block;
+        margin-bottom: 5px;
+        margin: auto;
+    }
+
+    .product-info h3 {
+        margin-bottom: 0;
+    }
+
+    #manufacturer {
+        margin-bottom: 10px;
+    }
+
+    .product-info p {
+        margin-bottom: 0;
+    }
+
+    .product-price {
+        color: #b12755;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    .product-link {
+        color: black;
+    }
+
+    .product-link:hover {
+        text-decoration: none;
+    }
+
+    .product:active {
+        text-decoration: none;
+    }
+}
+
+@media screen and (min-width: 600px) {
+
+    .page-title {
+        margin-right: 67%;
+        margin-top: 10px;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 30px;
+        grid-row-gap: 20px;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+    }
+
+    .product-img {
+        height: 150px;
+    }
+
+    .avg-rating-img {
+        width: 110px;
+    }
+
+    .best-seller-tag {
+        width: 100px;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .product-info h3 {
+        margin-bottom: 0;
+    }
+
+    #manufacturer {
+        margin-bottom: 10px;
+    }
+
+    .product-info p {
+        margin-bottom: 0;
+    }
+
+    .product-price {
+        color: #b12755;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    .product-link {
+        color: black;
+    }
+
+    .product-link:hover {
+        text-decoration: none;
+    }
+
+    .product:active {
+        text-decoration: none;
+    }
+}
