@@ -2,6 +2,18 @@
 
 @{
     ViewData["Title"] = "Echo";
+
+    var helloEcho = new Dictionary<string, string>
+    {
+        {"phrase", "Hello!" },
+        {"numoftimes", "20" }
+    };
+
+    var goodbyEcho = new Dictionary<string, string>
+    {
+        {"phrase", "Goodbye!" },
+        {"numoftimes", "50" }
+    };
 }
 
 @model EchoViewModel
@@ -10,9 +22,9 @@
 
 <nav>
     <ul>
-        <li><a href="http://localhost:63286/Home/Echo?numoftimes=10&phrase=Echo">Echo 10</a></li>
-        <li><a href="http://localhost:63286/Home/Echo?numoftimes=20&phrase=Hello!">Hello! 20</a></li>
-        <li><a href="http://localhost:63286/Home/Echo?numoftimes=50&phrase=Goodbye!">Goodbye! 50</a></li>
+        <li><a asp-controller="Home" asp-action="Echo">Echo 10</a></li>
+        <li><a asp-controller="Home" asp-action="Echo" asp-all-route-data="helloEcho">Hello! 20</a></li>
+        <li><a asp-controller="Home" asp-action="Echo" asp-all-route-data="goodbyEcho">Goodbye! 50</a></li>
     </ul>
 </nav>
 <ul>
