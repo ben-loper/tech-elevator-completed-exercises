@@ -67,5 +67,28 @@ namespace GETForms.Web.DAL
                 Rating = Convert.ToString(reader["rating"])
             };
         }
+
+        public IList<string> GetGenres()
+        {
+            IList<string> results = new List<string>();
+
+            string filmGetCategoriesSql = @"SELECT category.name FROM category";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand(filmGetCategoriesSql, conn);                
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    
+                    results.Add(Convert.ToString(reader["name"]));
+                }
+            }
+            
+            return results;
+        }
     }
 }

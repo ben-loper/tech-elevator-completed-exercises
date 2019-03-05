@@ -1,0 +1,17 @@
+﻿@model IList<Actor>
+
+@section StyleSheet {
+    <link rel="stylesheet" href="~/css/actor.css" />
+}
+
+    <partial name="_ActorSearch" />
+
+
+<div class="search-result">
+    
+        @foreach (var item in Model)
+        {
+            <p>@item.FirstName @item.LastName</p>
+        }
+        
+</div>

@@ -10,13 +10,31 @@ namespace GETForms.Web.Controllers
 {
     public class FilmsController : Controller
     {
+        private IFilmDAL _filmDal;
+
+        private FilmSearchViewModel _filmSearchModel;
+
+        public FilmsController(IFilmDAL filmDal)
+        {
+            _filmDal = filmDal;
+
+            _filmSearchModel = new FilmSearchViewModel();
+
+            IList<string> genres = _filmDal.GetGenres();
+
+            foreach (string genre in genres)
+            {
+                _filmSearchModel.PopulateGenresDropdown(genre);
+            }
+        }
+
         /// <summary>
         /// The request to display an empty search page.
         /// </summary>
         /// <returns></returns>
         public ActionResult Index()
         {
-            return null;
+            return View(_filmSearchModel);
         }
 
         /// <summary>
@@ -24,10 +42,16 @@ namespace GETForms.Web.Controllers
         /// </summary>
         /// <param name="request">A request model that contains the search parameters.</param>
         /// <returns></returns>
-        public ActionResult SearchResult(/*FilmSearch request */)
+        public ActionResult SearchResult(string genre, int minLength = 0, int maxLength = 1000 )
         {
-            /* Call the DAL and pass the values as a model back to the View */
-            return null;
+            _filmSearchModel.Films.Clear();
+
+            IList<Film> films = _filmDal.GetFilmsBetween(genre, minLength, maxLength);
+
+            _filmSearchModel.Films.AddRange(films);
+
+            return View(_filmSearchModel);
         }
+        
     }
 }

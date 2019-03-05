@@ -26,26 +26,8 @@
 
         <p>by @Model.Manufacturer</p>
 
-        @if (Model.AverageRating >= 5)
-        {
-            <img class="avg-rating-img" src="~/images/5-star.png" />
-        }
-        else if (Model.AverageRating >= 4)
-        {
-            <img class="avg-rating-img" src="~/images/4-star.png" />
-        }
-        else if (Model.AverageRating >= 3)
-        {
-            <img class="avg-rating-img" src="~/images/3-star.png" />
-        }
-        else if (Model.AverageRating >= 2)
-        {
-            <img class="avg-rating-img" src="~/images/2-star.png" />
-        }
-        else if (Model.AverageRating >= 1)
-        {
-            <img class="avg-rating-img" src="~/images/1-star.png" />
-        }
+        <img class="avg-rating-img" src="~/images/@Math.Floor(Model.AverageRating)-star.png" />
+
         @if (Model.RemainingStock <= 3)
         {
             <p class="remaining-stock-tag">Only @Model.RemainingStock left!</p>

@@ -29,6 +29,7 @@ namespace GETForms.Web.DAL
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("SELECT first_name, last_name FROM actor WHERE last_name LIKE @last_name ORDER BY last_name", conn);
+
                 cmd.Parameters.AddWithValue("@last_name", "%" + lastNameSearch + "%");
 
                 SqlDataReader reader = cmd.ExecuteReader();

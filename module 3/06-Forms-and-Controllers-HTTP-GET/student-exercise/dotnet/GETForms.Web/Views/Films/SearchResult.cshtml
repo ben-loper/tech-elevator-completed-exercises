@@ -1,0 +1,23 @@
+﻿@model FilmSearchViewModel
+
+@{
+    Layout = "_FilmSearchLayout";
+}
+
+@section StyleSheet {
+    <link rel="stylesheet" href="~/css/movie-search-result.css" />
+}
+
+<div class="search-result">
+    
+        @foreach (var item in Model.Films)
+        {
+            <div class="search-result-row">
+                <p>@item.Title</p>
+                <p>@item.Description</p>
+                <p>@item.ReleaseYear</p>
+                <p>@item.Length</p>
+                <p>@item.Rating</p>
+            </div>
+        }
+</div>

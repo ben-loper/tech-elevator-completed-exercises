@@ -1,0 +1,21 @@
+﻿@model CustomerSearchViewModel
+
+
+
+<form asp-controller="Customers" asp-action="SearchResult" method="get" class="search-form">
+    <div class="search-column">
+        <p>Name: </p>
+        <input type="text" name="searchTerm" />
+    </div>
+    <div class="search-column">
+        <p>Sort By: </p>
+        <select asp-for="SortBy" asp-items="CustomerSearchViewModel.SortByOptions"></select>
+        <input type="submit" value="Search" />
+    </div>
+</form>
+<div class="table-title">
+    <p>Name</p>
+    <p>Email</p>
+    <p>Active</p>
+</div>
+

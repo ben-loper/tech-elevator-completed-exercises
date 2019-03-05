@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@model FilmSearchViewModel
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -15,7 +17,8 @@
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
-        @RenderSection("StyleSheet", false);
+    @RenderSection("StyleSheet", false)
+    <link rel="stylesheet" href="~/css/film.css" />
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -39,8 +42,30 @@
         </div>
     </nav>
 
-    
+
     <div class="container body-content">
+        <form asp-controller="Films" asp-action="SearchResult" method="get" class="search-form">
+            <div class="search-column">
+                <p>Minimum Length: </p>
+                <input type="text" name="MinLength" />
+            </div>
+            <div class="search-column">
+                <p>Maximum Length: </p>
+                <input type="text" name="MaxLength" />
+            </div>
+            <div class="search-column">
+                <p>Genre:</p>
+                <select asp-for="Genre" asp-items="Model.Genres"></select>
+                <input type="submit" value="Search" />
+            </div>
+        </form>
+        <div class="table-title">
+            <p>Title</p>
+            <p>Description</p>
+            <p>Release Year</p>
+            <p>Length</p>
+            <p>Rating</p>
+        </div>
         @RenderBody()
         <hr />
         <footer>

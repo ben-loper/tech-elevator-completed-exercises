@@ -1,0 +1,29 @@
+﻿
+.search-form {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+
+.search-form p{
+    font-weight: bold;
+}
+
+.search-column {
+    margin-right: 20px;
+}
+
+.search-column input[type="text"]{
+    width: 250px;
+}
+
+.table-title {
+    display: grid;
+    grid-template-columns: 185px 650px 100px 100px 100px;    
+    column-gap: 15px;
+    padding-top: 10px;
+}
+
+.table-title p {
+    font-weight: bold;
+}

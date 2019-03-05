@@ -1,0 +1,25 @@
+﻿@model CustomerSearchViewModel
+
+
+@section StyleSheet{
+    <link rel="stylesheet" href="~/css/Customer.css" />
+}
+
+<partial name="_CustomerSearch" />
+
+@foreach (Customer customer in Model.MatchingCustomers)
+{
+<div class="search-result-row">
+    <p>@customer.FirstName @customer.LastName</p>
+    <p>@customer.Email</p>
+    @if(customer.IsActive == true)
+    {
+        <p>Yes</p>
+    }
+    else
+    {
+        <p>No</p>
+    }
+</div>
+}
+

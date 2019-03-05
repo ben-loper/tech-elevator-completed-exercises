@@ -1,0 +1,7 @@
+﻿.search-result-row {
+    display: grid;
+    grid-template-columns: 185px 650px 100px 100px 100px;
+    grid-template-rows: 50px;
+    column-gap: 15px;
+    border-top: 1px #d6d6d6 solid;
+}

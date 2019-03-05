@@ -45,26 +45,7 @@
                 <p class="product-price">@item.Price.ToString("C")</p>
 
                 <p><span style="font-weight:bold">Weight</span> @item.WeightInLbs Ibs</p>
-                @if (item.AverageRating >= 5)
-                {
-                    <img class="avg-rating-img" src="~/images/5-star.png" />
-                }
-                else if (item.AverageRating >= 4)
-                {
-                    <img class="avg-rating-img" src="~/images/4-star.png" />
-                }
-                else if (item.AverageRating >= 3)
-                {
-                    <img class="avg-rating-img" src="~/images/3-star.png" />
-                }
-                else if (item.AverageRating >= 2)
-                {
-                    <img class="avg-rating-img" src="~/images/2-star.png" />
-                }
-                else if (item.AverageRating >= 1)
-                {
-                    <img class="avg-rating-img" src="~/images/1-star.png" />
-                }
+                <img class="avg-rating-img" src="~/images/@Math.Floor(item.AverageRating)-star.png" />
             </div>
         </div>
     }
