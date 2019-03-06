@@ -5,6 +5,7 @@ namespace Post.Web.DAL
 {
     public interface IReviewDAO
     {
+        
         /// <summary>
         /// Returns a list of all reviews
         /// </summary>

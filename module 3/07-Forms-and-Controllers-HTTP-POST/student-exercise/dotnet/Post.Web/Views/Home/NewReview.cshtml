@@ -1,0 +1,26 @@
+﻿@model Review
+
+@{
+    ViewData["Title"] = "NewReview";
+}
+
+@section StyleSheet {
+    <link rel="stylesheet" href="~/css/new-review.css" />
+}
+
+<h3>New Book Review</h3>
+
+<form asp-controller="Home" asp-action="NewReview" method="post">
+    <div class="input-items">
+        
+        <p>Enter your username: <input type="text" asp-for="Username" /></p>
+        
+        <p>How many stars: <input type="number" asp-for="Rating" /></p>
+        
+        <p>Provide a title: <input type="text" asp-for="ReviewTitle" /></p>
+        
+        <p>Review: <input type="text" asp-for="ReviewText" /></p>
+    </div>
+    <input type="submit" value="Submit!" />
+</form>
+

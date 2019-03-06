@@ -1,0 +1,22 @@
+﻿.book-img {
+    width: 150px;
+}
+
+.review-row:nth-child(even) {
+    background-color: #d3d3d3;
+}
+
+.review-row {
+    margin-bottom: 10px;
+    padding: 5px 0 5px 5px;
+}
+
+.rating-star-img {
+    width: 15px;
+    padding-bottom: 3px;
+    margin-right: 0;
+}
+
+.review-row h4 {
+    margin-bottom: 0;
+}

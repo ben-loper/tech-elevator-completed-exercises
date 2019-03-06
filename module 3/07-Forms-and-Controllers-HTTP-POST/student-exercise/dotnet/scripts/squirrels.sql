@@ -1,4 +1,19 @@
-drop table reviews;
+-- Switch to the system (aka master) database
+USE master;
+GO
+
+-- Delete the Pagila Database (IF EXISTS)
+IF EXISTS(select * from sys.databases where name='SquirrelCigarParty')
+DROP DATABASE SquirrelCigarParty;
+GO
+
+-- Create a new Pagila Database
+CREATE DATABASE SquirrelCigarParty;
+GO
+
+-- Switch to the Pagila Database
+USE SquirrelCigarParty
+GO
 
 create table reviews
 (

@@ -1,0 +1,10 @@
+﻿
+.input-items{
+    display: grid;
+    justify-items: end;
+    width: 400px;
+}
+
+.input-items p {
+    font-weight: bold;
+}
