@@ -1,0 +1,65 @@
+﻿@model RegistrationViewModel
+
+
+@{
+    ViewBag.Title = "Register";
+}
+
+@section StyleSheet {
+    <link rel="stylesheet" href="~/css/Login.css" />
+}
+
+<h2>Login</h2>
+
+<form asp-controller="Users" asp-action="Register" method="post">
+
+    <label asp-for="FirstName"></label>
+    <div>
+        <input asp-for="FirstName" />
+        <span class="validation" asp-validation-for="FirstName"></span>
+    </div>
+
+    <label asp-for="LastName"></label>
+    <div>
+        <input asp-for="LastName" />
+        <span class="validation" asp-validation-for="LastName"></span>
+    </div>
+
+    <label asp-for="Email"></label>
+    <div>
+        <input asp-for="Email" />
+        <span class="validation" asp-validation-for="Email"></span>
+    </div>
+
+    <label asp-for="ConfEmail"></label>
+    <div>
+        <input asp-for="ConfEmail" />
+        <span class="validation" asp-validation-for="ConfEmail"></span>
+    </div>
+
+    <label asp-for="Password"></label>
+    <div>
+        <input asp-for="Password" />
+        <span class="validation" asp-validation-for="Password"></span>
+    </div>
+
+    <label asp-for="ConfPassword"></label>
+    <div>
+        <input asp-for="ConfPassword" />
+        <span class="validation" asp-validation-for="ConfPassword"></span>
+    </div>
+
+    <label asp-for="BirthDate"></label>
+    <div>
+        <input asp-for="BirthDate" />
+        <span class="validation" asp-validation-for="BirthDate"></span>
+    </div>
+
+    <label asp-for="NumOfTickets"></label>
+    <div>
+        <input asp-for="NumOfTickets" />
+        <span class="validation" asp-validation-for="NumOfTickets"></span>
+    </div>
+
+    <input type="submit" class="btn-primary sbmt-btn" value="Submit" />
+</form>

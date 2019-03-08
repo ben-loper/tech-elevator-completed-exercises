@@ -50,3 +50,12 @@ textarea {
     font-weight: bold;
 }
 
+.validation {
+    color: red;
+}
+
+footer {
+    border-top: 1px #eeeeee solid;
+    padding-top: 20px;
+    margin-top: 20px;
+}

@@ -1,0 +1,28 @@
+﻿@model LoginViewModel
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@section StyleSheet {
+    <link rel="stylesheet" href="~/css/login.css" />
+}
+
+<h2>Login</h2>
+
+<form asp-controller="Users" asp-action="Login" method="post">
+
+    <label asp-for="Email"></label>
+    <div>
+        <input asp-for="Email" />
+        <span class="validation" asp-validation-for="Email"></span>
+    </div>
+    
+        <label asp-for="Password"></label>
+    <div>
+        <input asp-for="Password" />
+        <span class="validation" asp-validation-for="Password"></span>
+    </div>
+    <input type="submit" class="btn-primary sbmt-btn" value="Submit" />
+</form>
