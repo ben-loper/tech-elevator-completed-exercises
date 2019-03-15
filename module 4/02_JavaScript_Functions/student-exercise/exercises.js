@@ -41,6 +41,18 @@ function isSummer(month, day = 1, hemisphere = 'northern') {
  * @returns {boolean} true if they are admitted
  */
 
+function isAdmitted(gpa, satScore = 0, recommendation = false) {
+
+  let result = false;
+
+  if (gpa > 4.0 || satScore > 1300 || (gpa > 3.0 && recommendation === true) || (satScore > 1200 && recommendation)) {
+    result = true;
+  }
+
+  return result;
+}
+
+
 /**
  * Write a function so that it takes an anonymous function and
  * uses that in `unfilteredArray` filter function. Return the result.
@@ -49,6 +61,15 @@ function isSummer(month, day = 1, hemisphere = 'northern') {
  * @returns {number[]} the filtered array
  */
 let unfilteredArray = [1, 2, 3, 4, 5, 6];
+
+function useParameterToFilterArray(filterFunction) {
+
+  return unfilteredArray.filter((element) => {
+
+    return filterFunction(element);
+
+  });
+}
 
 /**
  * Write a function called makeNumber to take two strings
@@ -63,6 +84,12 @@ let unfilteredArray = [1, 2, 3, 4, 5, 6];
  * @returns {number} the resultant number
  */
 
+function makeNumber(first, second = '') {
+  let result = first + second;
+
+  return parseInt(result);
+}
+
 /**
  * Write a function that takes an unknown number of parameters
  * and adds them all together. Return the result.
@@ -70,12 +97,35 @@ let unfilteredArray = [1, 2, 3, 4, 5, 6];
  * @param {...number} num a series of numbers to add together
  * @returns {number} the sum of all the parameters (or arguments)
  */
+function addAll() {
+  let result = 0;
+
+  for (let i = 0; i < arguments.length; i++) {
+    result += arguments[i];
+  }
+
+  return result;
+}
 
 /*
  * Write and document a function called makeHappy that takes
  * an array and prepends 'Happy ' to the beginning of all the
  * words and returns them as a new array. Use the `map` function.
  */
+
+/**
+ * @param {string[]} givenArray a series of strings to append 'Happy' to the beginning of each string
+ * @returns {sring[]} the array with 'Happy' prepended
+*/
+function makeHappy(givenArray){
+  
+  return givenArray.map( (element) => {
+
+    return 'Happy ' + element;
+
+  });
+}
+
 
 /*
  * Write and document a function called getFullAddressesOfProperties
@@ -94,6 +144,18 @@ let unfilteredArray = [1, 2, 3, 4, 5, 6];
  *
  * Use `map` and an anonymous function.
  */
+
+
+function getFullAddressesOfProperties(associativeArray){
+  
+  associativeArray.map((element) => {
+    for(let key in element){
+      return key;
+    }
+  })
+}
+
+
 
 /*
  * Create and document a function called findLargest.

@@ -1,5 +1,4 @@
 ﻿function sumDouble(x, y) {
-<<<<<<< HEAD
     
     let result = x + y;
     
@@ -61,12 +60,11 @@ function seeColor(word){
 }
 
 function oddOnly(nums){
-    return nums.filter(checkOdd);
+    return nums.filter((element) => {
+        return element % 2 !== 0;
+    });
 }
 
-function checkOdd(num){
-    return num % 2 !== 0;
-}
 
 function frontAgain(word){
     
@@ -115,19 +113,15 @@ function fizzBuzz(num){
 }
 
 function filterEvens(nums){
-    return nums.filter(checkEvens);
-}
-
-function checkEvens(num){
-    return num % 2 == 0;
+    return nums.filter((element) => {
+        return element % 2 == 0;
+    });
 }
 
 function filterBigNumbers(nums){
-    return nums.filter(checkOver100);
-}
-
-function checkOver100(num){
-    return num >= 100;
+    return nums.filter((element) => {
+        return element >= 100;
+    });
 }
 
 function filterMultiplesOfX(nums, num){
@@ -153,13 +147,4 @@ function createObject(){
     };
 
     return result;
-=======
-    let result = x + y;
-    // do logic here
-    if(x === y) {
-        result += result;
-    }
-    // return result;
-    return result;
->>>>>>> bbccab49be780d71c51fec63c1a805142c14f4bd
 }
