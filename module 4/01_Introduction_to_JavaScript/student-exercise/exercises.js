@@ -1,4 +1,5 @@
 ﻿function sumDouble(x, y) {
+<<<<<<< HEAD
     
     let result = x + y;
     
@@ -152,4 +153,13 @@ function createObject(){
     };
 
     return result;
+=======
+    let result = x + y;
+    // do logic here
+    if(x === y) {
+        result += result;
+    }
+    // return result;
+    return result;
+>>>>>>> bbccab49be780d71c51fec63c1a805142c14f4bd
 }
