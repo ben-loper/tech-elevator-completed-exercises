@@ -1,5 +1,10 @@
-/*
- * Document this function
+/** 
+ * Given the month of the year, day of the month, and a hemisphere, determines if it
+ * is summer in that location
+ * @param {int} month is the month of the year
+ * @param {int} day is the day of the month, defaults to 1
+ * @param {string} hemisphere is the hemisphere the of the location is in
+ * @returns {boolean} returns true if it is summer, false if it is not
  */
 function isSummer(month, day = 1, hemisphere = 'northern') {
   if (month === 7 || month === 8) {
@@ -127,7 +132,7 @@ function makeHappy(givenArray){
 }
 
 
-/*
+/** 
  * Write and document a function called getFullAddressesOfProperties
  * that takes an array of associative arrays containing the
  * following keys:
@@ -143,18 +148,47 @@ function makeHappy(givenArray){
  *     streetNumber streetName streetType city state zip
  *
  * Use `map` and an anonymous function.
+ * 
+ * @para {associative array[]} associativeArray is the array of associative arrays of addresses
+ * @returns {string[]} an array of strings with the properties of each address
  */
 
 
 function getFullAddressesOfProperties(associativeArray){
-  
-  associativeArray.map((element) => {
-    for(let key in element){
-      return key;
-    }
-  })
-}
 
+  return associativeArray.map((element) => {
+
+    let fullAddressArray = [];
+
+    for(let index in element){
+      if(index === 'streetNumber'){
+        fullAddressArray[0] = element[index];
+      }  
+      else if( index == 'streetName'){
+        fullAddressArray[1] = element[index];
+      }
+      else if( index == 'streetType'){
+        fullAddressArray[2] = element[index];
+      }
+      else if( index == 'city'){
+        fullAddressArray[3] = element[index];
+      }
+      else if( index == 'state'){
+        fullAddressArray[4] = element[index];
+      }
+      else if( index == 'zip'){
+        fullAddressArray[5] = element[index];
+      }
+    }
+
+    return fullAddressArray.reduce((fullAddress, addressPiece) => {
+
+      return fullAddress + ` ${addressPiece}`;
+    })
+
+  });
+
+}
 
 
 /*
@@ -163,6 +197,19 @@ function getFullAddressesOfProperties(associativeArray){
  * Using `forEach`, find the largest element in an array.
  * It should work for strings and numbers.
  */
+
+ function findLargest(collection){
+   
+    let largestValue = collection[0];
+
+      collection.forEach((element) => {
+        if(element > largestValue){
+          largestValue = element;
+        }
+      });
+
+    return largestValue;
+ }
 
 /*
  * CHALLENGE
