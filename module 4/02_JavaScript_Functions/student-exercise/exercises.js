@@ -3,7 +3,7 @@
  * is summer in that location
  * @param {int} month is the month of the year
  * @param {int} day is the day of the month, defaults to 1
- * @param {string} hemisphere is the hemisphere the of the location is in
+ * @param {string} hemisphere is the hemisphere the of the location is in, defaults to northern
  * @returns {boolean} returns true if it is summer, false if it is not
  */
 function isSummer(month, day = 1, hemisphere = 'northern') {
@@ -156,6 +156,7 @@ function makeHappy(givenArray){
 
 function getFullAddressesOfProperties(associativeArray){
 
+
   return associativeArray.map((element) => {
 
     let fullAddressArray = [];
@@ -228,3 +229,19 @@ function getFullAddressesOfProperties(associativeArray){
  *
  * Read the tests to verify you have the correct behavior.
  */
+
+
+ function getSumOfSubArrayValues(numArrays){
+
+    let totalSum = 0;
+
+    for(let index in numArrays){
+
+      totalSum += numArrays[index].reduce((singleArraySum, element) => {
+
+        return singleArraySum += element;
+      })
+    }
+
+    return totalSum;
+  }
