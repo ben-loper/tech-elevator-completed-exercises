@@ -44,6 +44,10 @@ function displayGroceries() {
  */
 function markCompleted() {
   
+  let ulNode = document.querySelector('ul');
+
+  ulNode.childNodes
+
   let groceryItems = document.querySelectorAll('.shopping-list ul li');
 
   groceryItems.forEach((element) => {
