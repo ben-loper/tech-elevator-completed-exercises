@@ -38,6 +38,104 @@ function displayGroceries() {
 }
 
 
+document.addEventListener("DOMContentLoaded", () => {
+  
+  setPageTitle();
+
+  displayGroceries();
+
+  // Register all of your event listeners here
+  const groceryList = document.querySelector('ul');
+
+  // Adds event listener to the grocery list Unordered List
+  // to delegate to the grocery item
+  {
+    groceryList.addEventListener('click', (event) => {
+      
+      if(!event.target.classList.contains('completed')){
+        if(event.target.matches('li')){
+          const li = event.target;
+          const checkBox = li.lastElementChild;
+
+          li.classList.add('completed');
+          checkBox.classList.add('completed');
+        }
+        else if(event.target.matches('i')){
+          const checkBox = event.target;
+          const li = checkBox.parentNode;
+
+          li.classList.add('completed');
+          checkBox.classList.add('completed');
+        }
+    }    
+    })
+  }
+
+  //Add double click event listener to the grocery list
+  //to delegate to the grocery items
+  {
+    groceryList.addEventListener('dblclick', (event) => {
+      
+      if(event.target.classList.contains('completed')){
+        if(event.target.matches('li')){
+          const li = event.target;
+          const checkBox = li.lastElementChild;
+
+          li.classList.remove('completed');
+          checkBox.classList.remove('completed');
+        }
+        else if(event.target.matches('i')){
+          const checkBox = event.target;
+          const li = checkBox.parentNode;
+
+          li.classList.remove('completed');
+          checkBox.classList.remove('completed');
+        }
+    }    
+    })
+  }
+ 
+  const toggleAllBtn = document.querySelector('#toggleAll');
+
+  // Add event listener to the button for marking all grocery items to be complete
+  // or incomplete
+  {      
+    toggleAllBtn.addEventListener('click', () => {
+
+      const groceryItems = document.querySelectorAll('ul li');
+
+      if(allItemsIncomplete === true){
+        
+        groceryItems.forEach((item) => {       
+          if(!item.classList.contains('completed')){
+            const checkBox = item.lastElementChild;
+            item.classList.add('completed');
+            checkBox.classList.add('completed');
+          }  
+        })
+
+        allItemsIncomplete = false;
+        toggleAllBtn.innerText = 'mark all incomplete';
+      }
+      else if(allItemsIncomplete === false){
+        
+        groceryItems.forEach((item) => {       
+          if(item.classList.contains('completed')){
+            const checkBox = item.lastElementChild;
+            item.classList.remove('completed');
+            checkBox.classList.remove('completed');
+          }  
+        })
+
+        allItemsIncomplete = true;
+        toggleAllBtn.innerText = 'mark all complete';
+      }
+
+    })
+  }
+  
+});
+
 function addCompleteClickEventListenerUl() {
 
   const groceryList = document.querySelector('ul');
@@ -128,11 +226,11 @@ function toggleAllEventListener(){
 
 }
 
-setPageTitle();
-displayGroceries();
-addCompleteClickEventListenerUl();
-addIncompleteClickEventListenerUl();
-toggleAllEventListener();
+// setPageTitle();
+// displayGroceries();
+// // addCompleteClickEventListenerUl();
+// // addIncompleteClickEventListenerUl();
+// // toggleAllEventListener();
 
 
 
