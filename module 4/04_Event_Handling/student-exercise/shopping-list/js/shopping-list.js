@@ -47,6 +47,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Register all of your event listeners here
   const groceryList = document.querySelector('ul');
 
+  {
+
+  }
   // Adds event listener to the grocery list Unordered List
   // to delegate to the grocery item
   {
@@ -134,6 +137,12 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
   
+
+  const newItemBtn = document.querySelector("#new-item-btn");
+
+  newItemBtn.addEventListener('click', ()=>{
+    saveItem();
+  })
 });
 
 function addCompleteClickEventListenerUl() {
@@ -223,6 +232,28 @@ function toggleAllEventListener(){
     }
 
   })
+
+}
+
+function saveItem(){
+  
+  const itemNameNode = document.querySelector('#item-name');
+
+  const itemName = itemNameNode.value;
+
+  if(itemName !== ""){
+    const li = document.createElement('li');
+    li.innerText = itemName;
+    const checkCircle = document.createElement('i');
+    checkCircle.setAttribute('class', 'far fa-check-circle');
+    li.appendChild(checkCircle);
+    
+    const groceryList = document.querySelector('ul');
+
+    groceryList.appendChild(li);
+
+    itemNameNode.value = "";
+  }
 
 }
 
