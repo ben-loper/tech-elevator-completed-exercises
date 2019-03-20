@@ -5,7 +5,10 @@
     { "name": "Strawberries", "completed": true},
     { "name": "Lunch" , "completed": false},
     { "name": "Bread", "completed": false},
+    { "name": "Shoes", "completed": false},
     { "name": "Grapes", "completed": false},
     { "name": "Steak", "completed": false},
-    { "name": "Salad", "completed": false}
+    { "name": "Salad", "completed": false},
+    { "name": "French Fries", "completed": false}
+    
 ]

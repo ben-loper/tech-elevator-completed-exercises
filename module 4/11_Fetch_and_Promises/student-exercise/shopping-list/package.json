@@ -4,12 +4,15 @@
   "description": "This exercise will test your knowledge of The Fetch API & Promises ",
   "main": "index.js",
   "scripts": {
-    "test": "cypress open"
+    "start": "./node_modules/.bin/http-server",
+    "cypress:run": "./node_modules/.bin/cypress run",
+    "cypress:open": "cypress open",
+    "test": "npm run cypress:run"
   },
-  "keywords": [],
-  "author": "Tech Elevator",
+  "author": "",
   "license": "ISC",
-  "dependencies": {
-    "cypress": "^3.1.4"
+  "devDependencies": {
+    "cypress": "^3.1.5",
+    "http-server": "^0.11.1"
   }
 }
