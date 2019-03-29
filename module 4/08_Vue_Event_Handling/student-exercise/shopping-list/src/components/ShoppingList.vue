@@ -2,7 +2,13 @@
     <div class="shopping-list">
         <h1>My Shopping List</h1>
         <ul>
-            <li v-for="item in groceries" v-bind:key="item.id" v-bind:class="{ completed: item.completed }">
+            <li v-for="item in groceries" 
+                v-bind:key="item.id" 
+                @mouseover.stop="active($event)"
+                @mouseleave="inactive($event)"
+                v-bind:class="{ completed: item.completed }"  
+                @click="changeStatus(item.id, $event)" >
+                <input type="checkbox"/>
                 {{item.name}} 
                 <i class="far fa-check-circle" v-bind:class="{ completed: item.completed }"></i>
             </li>
@@ -15,20 +21,75 @@ export default {
     data() {
         return {
             groceries: [
-                { name: 'Oatmeal', completed: false },
-                { name: 'Milk', completed: false },
-                { name: 'Banana', completed: false },
-                { name: 'Strawberries', completed: false },
-                { name: 'Lunch Meat', completed: false },
-                { name: 'Bread', completed: false },
-                { name: 'Grapes', completed: false },
-                { name: 'Steak', completed: false },
-                { name: 'Salad', completed: false }
+                { id: 1, name: 'Oatmeal', completed: false },
+                { id: 2, name: 'Milk', completed: false },
+                { id: 3, name: 'Banana', completed: false },
+                { id: 4, name: 'Strawberries', completed: false },
+                { id: 5, name: 'Lunch Meat', completed: false },
+                { id: 6, name: 'Bread', completed: false },
+                { id: 7, name: 'Grapes', completed: false },
+                { id: 8, name: 'Steak', completed: false },
+                { id: 9, name: 'Salad', completed: false }
             ]
         }
     },
     methods: {
+        changeStatus(id, event){
 
+            const arrayIndex = this.groceries.findIndex((groceryItem) => { return groceryItem.id == id } );
+
+            let node = event.target;
+                     
+            if(node.localName == 'li'){
+                let checkbox = node.firstChild;
+
+                if(!this.groceries[arrayIndex].completed == true) {
+                    checkbox.checked = true;
+                }
+                else {
+                    checkbox.checked = false;
+                }
+            }
+            else if(node.localName == 'i'){
+                let liNode = node.parentNode;
+
+                let checkbox = liNode.firstChild;
+
+                if(!this.groceries[arrayIndex].completed == true) {
+                    checkbox.checked = true;
+                }
+                else {
+                    checkbox.checked = false;
+                }
+            }
+            
+            this.groceries[arrayIndex].completed = !this.groceries[arrayIndex].completed;
+        },
+
+        active(event){
+            if(event.target.localName == 'i'){
+                
+                let liNode = node.parentNode;
+
+                liNode.classList.add('active');
+            }
+            else {
+                event.target.classList.add('active');
+            }
+        },
+        
+        inactive(event){
+
+            if(event.target.localName == 'i'){
+                
+                let liNode = node.parentNode;
+
+                liNode.classList.remove('active');
+            }
+            else {
+                event.target.classList.remove('active');
+            }            
+        }
     }
 }
 </script>
@@ -81,5 +142,8 @@ input[type="checkbox"] {
     font-size:40px;
     vertical-align: middle;
     margin-top:0px;
+}
+.active {
+    background-color: lightblue;
 }
 </style>

@@ -2,22 +2,60 @@
     <div class="shopping-list">
         <h1>My Shopping List</h1>
         <ul>
-            <li class="completed">Oatmeal</li>
-            <li class="completed">Milk</li>
-            <li class="completed">Banana</li>
-            <li>Strawberries</li>
-            <li>Lunch Meat</li>
-            <li>Bread</li>
-            <li>Grapes</li>
-            <li>Steak</li>
-            <li>Salad</li>
+            <li v-for="groceryItem in groceryItems" 
+                v-bind:key="groceryItem.item"
+                :class="{completed: groceryItem.completed}" >
+                {{groceryItem.item}}
+            </li>
         </ul>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'ShoppingList'
+    name: 'ShoppingList',
+    data(){
+        return{
+            groceryItems:[
+                {   
+                    item:`Milk`,
+                    completed: true
+                },
+                {
+                    item:`French Fries`,
+                    completed: false
+                },
+                {
+                    item:`Banana`,
+                    completed: false
+                },
+                {
+                    item:`Strawberries`,
+                    completed: false
+                },
+                {
+                    item:`Lunch Meat`,
+                    completed: false
+                },
+                {
+                    item:`Bread`,
+                    completed: true
+                },
+                {
+                    item:`Grapes`,
+                    completed: false
+                },
+                {
+                    item:`Steak`,
+                    completed: true
+                    },
+                {
+                    item:`Salad`, 
+                    completed: false
+                }
+            ]
+        }
+    }
 }
 </script>
 
