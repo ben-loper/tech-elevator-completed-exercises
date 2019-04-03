@@ -21,7 +21,7 @@ export default {
   },
   data() {
     return {
-      search: '',
+      search: ``,
       groceries: [
           { id: 1, name: 'Oatmeal', completed: false },
           { id: 2, name: 'Milk', completed: false },

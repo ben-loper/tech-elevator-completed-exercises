@@ -1,6 +1,6 @@
 <template>
     <div class="search">
-        <input type="text" @keyup="filterTodos" id="search" name="search" placeholder="Search Todo's..." />
+        <input type="text" @keyup="filterTodos" id="search" placeholder="Search Todo's..." />
     </div>
 </template>
 
